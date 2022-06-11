@@ -4,7 +4,16 @@ $total=0;
 if(Session::has('user'))
 {
  $total= ProductController::cartItem();
-}
+
+ if($total > 0){
+    $icon='https://freshngo.s3.amazonaws.com/core/icons8-picnic-basket-32.png';
+ } else {
+    $icon='https://freshngo.s3.amazonaws.com/core/icons8-picnic-basket-nawicon-glyph-32.png';
+ }
+} else {
+
+    $icon='https://freshngo.s3.amazonaws.com/core/icons8-picnic-basket-nawicon-glyph-32.png';
+ }
 ?>
 <header>
   <nav class="navbar navbar-default">
@@ -17,13 +26,14 @@ if(Session::has('user'))
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Fresh n' Go</a>
+          <a class="navbar-brand" href="/"><img src="https://freshngo.s3.amazonaws.com/core/FRESHn'GO_Logo_Color.png" alt="" height="24"></a>
         </div>
     
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
+            <li><a href="/products">Products</a></li>
             <li><a href="/myorders">Orders</a></li>
           </ul>
           <form action="/search" class="navbar-form navbar-left">
@@ -33,7 +43,7 @@ if(Session::has('user'))
             <button type="submit" class="btn btn-default">Search</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/cartlist">cart({{$total}})</a></li>
+            <li><a href="/cartlist"> <img src="{{$icon}}" alt="" height="32">({{$total}})</a></li>
             @if(Session::has('user'))
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('user')['name']}}
@@ -49,21 +59,4 @@ if(Session::has('user'))
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-      <!-- Background image -->
-      <div class="py-5 text-center">
-      <!-- <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);"> -->
-      <div>
-      <img src="https://freshngo.s3.amazonaws.com/core/FRESHn'GO_Logo_Color.png"  class="img-fluid" alt="">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="text-white">
-            <!-- <h1 class="mb-3">Heading</h1> -->
-            <h4 class="mb-3">Subheading</h4>
-            <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button"
-            >Call to action</a
-            > -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Background image -->
 </header>

@@ -15,6 +15,7 @@
        <form action="/add_to_cart" method="POST">
            @csrf
            <input type="hidden" name="product_id" value={{$product['id']}}>
+           <input type="hidden" name="quantity" value={{$product['id']}}>
        <button class="btn btn-primary">Add to Cart</button>
        </form>
        <br><br>
