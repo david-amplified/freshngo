@@ -24,7 +24,8 @@
         padding-top: 100px;
     }
     img.slider-img{
-        height: 400px !important
+        height: 300px !important;
+        margin: auto;
     }
     .custom-product{
         height: 600px
