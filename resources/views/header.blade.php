@@ -15,48 +15,28 @@ if(Session::has('user'))
     $icon='https://freshngo.s3.amazonaws.com/core/icons8-picnic-basket-nawicon-glyph-32.png';
  }
 ?>
-<header>
-  <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/"><img src="https://freshngo.s3.amazonaws.com/core/FRESHn'GO_Logo_Color.png" alt="" height="24"></a>
-        </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/myorders">Orders</a></li>
-          </ul>
-          <form action="/search" class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" name="query" class="form-control search-box" placeholder="Search">
+
+ <!-- Navigation-->
+ <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="https://freshngo.s3.amazonaws.com/core/FRESHn'GO_Logo_Color.png" alt="" height="48"></a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About Us</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#menu">Menu Options</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/cartlist"> <img src="{{$icon}}" alt="" height="32">({{$total}})</a></li>
-            @if(Session::has('user'))
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('user')['name']}}
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/logout">Logout</a></li>
-              </ul>
-            </li>
-            @else
-            <li><a href="/login">Login</a></li>
-            @endif
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-</header>
+        </nav>
+        <!-- Masthead-->
+        <header class="text-white text-center">
+            <div class="d-flex align-items-center flex-column">
+                <img src="https://freshngo.s3.amazonaws.com/core/pasta-set-up.jpeg" width="100%">
+                <p class="masthead-subheading font-weight-light mb-0">Bringing a New Dining Idea to San Pedro</p>
+            </div>
+        </header>
